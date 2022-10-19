@@ -1,0 +1,3878 @@
+Model {
+  Name			  "relaying"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Thu Aug 19 22:52:50 1999"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Aug 19 22:53:09 1999"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "relaying"
+    Location		    [322, 83, 822, 384]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Protective Relays1"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [285, 44, 350, 136]
+      BackgroundColor	      "darkGreen"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Protective Relays1"
+	Location		[313, 283, 799, 604]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "IABC"
+	  Position		  [25, 113, 55, 127]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "I0"
+	  Position		  [25, 143, 55, 157]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Vline"
+	  Position		  [30, 258, 60, 272]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Directional\nProtection"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 219, 230, 281]
+	  DropShadow		  on
+	  ShowPortLabels	  on
+	  MaskType		  "Directional Elements"
+	  MaskPromptString	  "Angle alpha (deg)|Angle Beta (deg)"
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskVariables		  "AA=@1;AB=@2;"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "-60|120"
+	  System {
+	    Name		    "Directional\nProtection"
+	    Location		    [203, 292, 674, 673]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IABC"
+	      Position		      [15, 123, 45, 137]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Vline"
+	      Position		      [15, 223, 45, 237]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "  VAB-IC"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [210, 47, 265, 103]
+	      BackgroundColor	      "yellow"
+	      NamePlacement	      "alternate"
+	      ShowPortLabels	      on
+	      MaskType		      "Directional Element 1"
+	      MaskDescription	      "This block has two phasor inputs: volta"
+"ge and current. The operating characteristic is defined by two angles. The ou"
+"tput is 1 when the current phasor falls into the operating characteristic."
+	      MaskHelp		      "web(['file:///' which('zc.html')]);\n\n"
+	      MaskPromptString	      "Angle alpha [deg]|Angle Beta [deg]|Samp"
+"ling frecuency (Hz):"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskVariables	      "alpha=@1;beta=@2;fs=@3;"
+	      MaskInitialization      "DE_11;\n"
+	      MaskDisplay	      "plot([0.2 0.8],[0.5 0.5],[0.5 0.6],[0.5"
+" 0.8],[0.5,xalpha],[0.5,yalpha],[0.5,xbeta],[0.5,ybeta]);\n\n\n\n\n\n\n \n\n"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "normalized"
+	      MaskValueString	      "AA|AB|40*60"
+	      System {
+		Name			"  VAB-IC"
+		Location		[263, 82, 912, 681]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "V"
+		  Position		  [150, 80, 185, 100]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "I"
+		  Position		  [150, 160, 185, 180]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [225, 117, 260, 153]
+		  Inputs		  "2"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "S-Function"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [285, 120, 345, 150]
+		  FunctionName		  "DE_12"
+		  Parameters		  "alpha,beta,fs"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dir"
+		  Position		  [365, 125, 385, 145]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "S-Function"
+		  SrcPort		  1
+		  DstBlock		  "dir"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "S-Function"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "V"
+		  SrcPort		  1
+		  Points		  [0, 35]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "I"
+		  SrcPort		  1
+		  Points		  [0, -25]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "  VBC-IA"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [210, 182, 265, 238]
+	      BackgroundColor	      "yellow"
+	      NamePlacement	      "alternate"
+	      SourceBlock	      "ELEMENTS/  DE_1"
+	      SourceType	      "Directional Element 1"
+	      alpha		      "AA"
+	      beta		      "AB"
+	      fs		      "40*60"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "  VCA-IB"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [210, 292, 265, 348]
+	      BackgroundColor	      "yellow"
+	      NamePlacement	      "alternate"
+	      SourceBlock	      "ELEMENTS/  DE_1"
+	      SourceType	      "Directional Element 1"
+	      alpha		      "AA"
+	      beta		      "AB"
+	      fs		      "40*60"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 3, 0, 0, 0]
+	      Position		      [85, 112, 120, 148]
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 3, 0, 0, 0]
+	      Position		      [85, 212, 120, 248]
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [350, 194, 380, 226]
+	      Operator		      "OR"
+	      Inputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip A"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [290, 225, 320, 255]
+	      Floating		      off
+	      Location		      [663, 30, 987, 269]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "-1              "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip B"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [295, 330, 325, 360]
+	      Floating		      off
+	      Location		      [666, 265, 990, 504]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "-1              "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip C"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [305, 60, 335, 90]
+	      Floating		      off
+	      Location		      [667, 501, 990, 737]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "-1              "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Trip ABC-DIR"
+	      Position		      [400, 203, 430, 217]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "  VAB-IC"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 125]
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Trip C"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Labels		      [1, 0]
+	      SrcBlock		      "  VCA-IB"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[60, 0]
+		DstBlock		"Logical\nOperator"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Trip B"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      3
+	      Points		      [55, 0; 0, 65]
+	      DstBlock		      "  VCA-IB"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [25, 0; 0, 205]
+	      DstBlock		      "  VCA-IB"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -160]
+	      DstBlock		      "  VAB-IC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [55, 0; 0, -50]
+	      DstBlock		      "  VAB-IC"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      Points		      [55, 0; 0, -35]
+	      DstBlock		      "  VBC-IA"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "  VBC-IA"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Vline"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IABC"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Trip ABC-DIR"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "  VBC-IA"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		DstBlock		"Logical\nOperator"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Trip A"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Logic"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [320, 120, 390, 180]
+	  BackgroundColor	  "orange"
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "Logic"
+	    Location		    [367, 300, 722, 496]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Time"
+	      Position		      [60, 48, 90, 62]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Residual"
+	      Position		      [60, 83, 90, 97]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Directional"
+	      Position		      [60, 118, 90, 132]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [170, 74, 200, 106]
+	      Operator		      "OR"
+	      Inputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Trip"
+	      Position		      [240, 85, 270, 95]
+	      NamePlacement	      "alternate"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Directional"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Trip"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Time"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Residual"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Residual\nProtection"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [135, 125, 225, 175]
+	  DropShadow		  on
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "Residual\nProtection"
+	    Location		    [235, 321, 641, 686]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "I0"
+	      Position		      [20, 123, 50, 137]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [85, 112, 120, 148]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "UC1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [175, 100, 235, 160]
+	      BackgroundColor	      "yellow"
+	      SourceBlock	      "ELEMENTS/UC"
+	      SourceType	      "Universal Comparator"
+	      type0		      "Signal-Time"
+	      sign		      "<"
+	      Ipickup		      "1.5"
+	      k1		      "1"
+	      type1		      "RI Inverse"
+	      type3		      "integration"
+	      k			      "0.05"
+	      fs		      "40*60"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Trip \nABC-RES"
+	      Position		      [280, 123, 310, 137]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "UC1"
+	      SrcPort		      1
+	      DstBlock		      "Trip \nABC-RES"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      Points		      [35, 0]
+	      DstBlock		      "UC1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "UC1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "I0"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Time Overcurrent\nProtection"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [135, 29, 225, 81]
+	  DropShadow		  on
+	  ShowPortLabels	  on
+	  MaskType		  "Overcurrent Protection"
+	  MaskPromptString	  "Type of time dependency|Pickup value:|Time "
+"parameter (seconds):"
+	  MaskStyleString	  "popup(Time defined|Standard Inverse|Very In"
+"verse|Extra Inverse|RI Inverse|Long Time Inverse),edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskVariables		  "typed=@1;Pick=@2;k=@3;"
+	  MaskInitialization	  "switch typed\ncase 1,\n   string='Time defi"
+"ned';\ncase 2,\n   string='Standard Inverse';\ncase 3,\n   string='Very Inver"
+"se';\ncase 4,\n   string='Extra Inverse';\ncase 5,\n   string='RI Inverse';\n"
+"case 6,\n   string='Long Time Inverse';\nend;\nset_param('systemtotal/Protect"
+"ive Relays/Time Overcurrent Protection/UC1',...\n   'Type1',string);\nset_par"
+"am('systemtotal/Protective Relays/Time Overcurrent Protection/UC2',...\n   'T"
+"ype1',string);\nset_param('systemtotal/Protective Relays/Time Overcurrent Pro"
+"tection/UC3',...\n   'Type1',string);\n"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "Very Inverse|1.5|0.05"
+	  System {
+	    Name		    "Time Overcurrent\nProtection"
+	    Location		    [202, 132, 896, 692]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IABC"
+	      Position		      [165, 302, 195, 318]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 3, 0, 0, 0]
+	      Position		      [220, 292, 255, 328]
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [290, 187, 325, 223]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [290, 292, 325, 328]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux3"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [295, 407, 330, 443]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [540, 289, 570, 321]
+	      Operator		      "OR"
+	      Inputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Phase current A\nAmplitude"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [460, 140, 490, 170]
+	      Floating		      off
+	      Location		      [10, 30, 334, 269]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "-1"
+	      YMax		      "1.25"
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Phase current B\nAmplitude"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [455, 250, 485, 280]
+	      Floating		      off
+	      Location		      [8, 238, 332, 477]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "0.2"
+	      YMin		      "-1.25"
+	      YMax		      "1.25"
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Phase current C\nAmplitude"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [460, 365, 490, 395]
+	      Floating		      off
+	      Location		      [7, 496, 331, 735]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "0.2"
+	      YMin		      "-20"
+	      YMax		      "30"
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip A"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [465, 200, 495, 230]
+	      Floating		      off
+	      Location		      [340, 30, 666, 263]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "0               "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip B"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [460, 315, 490, 345]
+	      Floating		      off
+	      Location		      [341, 252, 665, 491]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "0               "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Trip C"
+	      Ports		      [1, 0, 0, 0, 0]
+	      Position		      [455, 425, 485, 455]
+	      Floating		      off
+	      Location		      [341, 488, 665, 727]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      TickLabels	      "on"
+	      ZoomMode		      "on"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+	      }
+	      Grid		      "on"
+	      TimeRange		      "auto"
+	      YMin		      "0               "
+	      YMax		      "1               "
+	      SaveToWorkspace	      off
+	      SaveName		      "ScopeData"
+	      DataFormat	      "Matrix"
+	      LimitMaxRows	      off
+	      MaxRows		      "5000"
+	      Decimation	      "1"
+	      SampleInput	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "UC1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [370, 170, 430, 230]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Universal Comparator"
+	      MaskDescription	      "This block is fed by two signals and do"
+"es comparisons of three types: signal-to-signal, signal-to-threshold and sign"
+"al-to-time. The options include the sign of the comparison, pick-up to re-set"
+" ratio, and the way of emulating the steady-state current characteristic."
+	      MaskHelp		      "web(['file:///' which('uc.html')]);\n\n"
+	      MaskPromptString	      "Type of comparison|Sign|Pick-up value:|"
+"Ratio of reset to pick-up:|Type of Time dependency|I-t emulation method|Time "
+"parameter (seconds):|Sampling frequency (Hz):"
+	      MaskStyleString	      "popup(Signal-Threshold|Signal-Signal|Si"
+"gnal-Time),popup(>|<),edit,edit,popup(Time defined|Standard Inverse|Very Inve"
+"rse|Extra Inverse|RI Inverse|Long Time Inverse),popup(Present value|integrati"
+"on),edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+	      MaskVariables	      "type0=@1;sign=@2;Ipickup=@3;k1=@4;type1"
+"=@5;type3=@6;k=@7;fs=@8;"
+	      MaskInitialization      "\nuc0;\n"
+	      MaskDisplay	      "disp(icon);\nplot(current,time);\n"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "port"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Signal-Time|<|Pick|1|Very Inverse|integ"
+"ration|k|40*60"
+	      System {
+		Name			"UC1"
+		Location		[47, 237, 696, 786]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "S1"
+		  Position		  [150, 100, 185, 120]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "S2"
+		  Position		  [145, 145, 180, 165]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [230, 117, 265, 153]
+		  Inputs		  "2"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "S-Function"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [285, 120, 345, 150]
+		  FunctionName		  "uc1"
+		  Parameters		  "k,k1,aux,Ipickup,fs"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "C"
+		  Position		  [380, 125, 400, 145]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "S2"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -10]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "S1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, 15]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "S-Function"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "S-Function"
+		  SrcPort		  1
+		  DstBlock		  "C"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "UC2"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [370, 275, 430, 335]
+	      BackgroundColor	      "yellow"
+	      SourceBlock	      "ELEMENTS/UC"
+	      SourceType	      "Universal Comparator"
+	      type0		      "Signal-Time"
+	      sign		      "<"
+	      Ipickup		      "Pick"
+	      k1		      "1"
+	      type1		      "Very Inverse"
+	      type3		      "integration"
+	      k			      "k"
+	      fs		      "40*60"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "UC3"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [370, 390, 430, 450]
+	      BackgroundColor	      "yellow"
+	      SourceBlock	      "ELEMENTS/UC"
+	      SourceType	      "Universal Comparator"
+	      type0		      "Signal-Time"
+	      sign		      "<"
+	      Ipickup		      "Pick"
+	      k1		      "1"
+	      type1		      "Very Inverse"
+	      type3		      "integration"
+	      k			      "k"
+	      fs		      "40*60"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Trip ABC-IT"
+	      Position		      [590, 298, 620, 312]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "UC1"
+	      SrcPort		      1
+	      Points		      [0, -5; 10, 0]
+	      Branch {
+		Points			[0, 20]
+		DstBlock		"Trip A"
+		DstPort			1
+	      }
+	      Branch {
+		Labels			[1, 0]
+		Points			[65, 0; 0, 100]
+		DstBlock		"Logical\nOperator2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "IABC"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [20, 0]
+	      DstBlock		      "Demux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      DstBlock		      "Trip ABC-IT"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      2
+	      DstBlock		      "UC3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      DstBlock		      "UC2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      DstBlock		      "UC1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "UC3"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[70, 0; 0, -105]
+		DstBlock		"Logical\nOperator2"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Trip C"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "UC2"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Logical\nOperator2"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Trip B"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"Phase current C\nAmplitude"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"UC3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"Phase current B\nAmplitude"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"UC2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      Points		      [0, -40]
+	      Branch {
+		DstBlock		"Phase current A\nAmplitude"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 30]
+		DstBlock		"UC1"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Trip ABC-DIR"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [260, 260, 290, 290]
+	  Floating		  off
+	  Location		  [670, 21, 994, 260]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  TickLabels		  "on"
+	  ZoomMode		  "on"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  Grid			  "on"
+	  TimeRange		  "auto"
+	  YMin			  "-1"
+	  YMax			  "1"
+	  SaveToWorkspace	  off
+	  SaveName		  "ScopeData"
+	  DataFormat		  "Matrix"
+	  LimitMaxRows		  off
+	  MaxRows		  "5000"
+	  Decimation		  "1"
+	  SampleInput		  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Trip ABC-IT"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [260, 40, 290, 70]
+	  Floating		  off
+	  Location		  [670, 272, 995, 511]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  TickLabels		  "on"
+	  ZoomMode		  "on"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  Grid			  "on"
+	  TimeRange		  "auto"
+	  YMin			  "-1"
+	  YMax			  "1"
+	  SaveToWorkspace	  off
+	  SaveName		  "ScopeData"
+	  DataFormat		  "Matrix"
+	  LimitMaxRows		  off
+	  MaxRows		  "5000"
+	  Decimation		  "1"
+	  SampleInput		  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Trip ABC-RES"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [255, 160, 285, 190]
+	  Floating		  off
+	  Location		  [670, 499, 996, 735]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  TickLabels		  "on"
+	  ZoomMode		  "on"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  Grid			  "on"
+	  TimeRange		  "auto"
+	  YMin			  "-1"
+	  YMax			  "1"
+	  SaveToWorkspace	  off
+	  SaveName		  "ScopeData"
+	  DataFormat		  "Matrix"
+	  LimitMaxRows		  off
+	  MaxRows		  "5000"
+	  Decimation		  "1"
+	  SampleInput		  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TRIP"
+	  Position		  [415, 143, 445, 157]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Vline"
+	  SrcPort		  1
+	  DstBlock		  "Directional\nProtection"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "I0"
+	  SrcPort		  1
+	  DstBlock		  "Residual\nProtection"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logic"
+	  SrcPort		  1
+	  DstBlock		  "TRIP"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Directional\nProtection"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [65, 0]
+	    DstBlock		    "Logic"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Trip ABC-DIR"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Time Overcurrent\nProtection"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Logic"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Trip ABC-IT"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Residual\nProtection"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Logic"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Trip ABC-RES"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "IABC"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [25, 0; 0, 115]
+	    DstBlock		    "Directional\nProtection"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [25, 0; 0, -65]
+	    DstBlock		    "Time Overcurrent\nProtection"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Signal Processinng"
+      Ports		      [2, 3, 0, 0, 0]
+      Position		      [120, 45, 195, 135]
+      BackgroundColor	      "green"
+      ShowPortLabels	      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Signal Processinng"
+	Location		[256, 347, 476, 575]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "IABC,sec"
+	  Position		  [25, 53, 55, 67]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "VABC,sec"
+	  Position		  [25, 168, 55, 182]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DAB+OC I"
+	  Ports			  [1, 2, 0, 0, 0]
+	  Position		  [90, 29, 140, 91]
+	  ShowPortLabels	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "DAB+OC I"
+	    Location		    [437, 400, 905, 676]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IABC,sec"
+	      Position		      [25, 98, 55, 112]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [155, 31, 200, 59]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [155, 91, 200, 119]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB1"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [155, 146, 200, 174]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB2"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 3, 0, 0, 0]
+	      Position		      [80, 87, 115, 123]
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [295, 220, 325, 250]
+	      Gain		      "1/3"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [320, 87, 355, 123]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [255, 27, 295, 63]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [255, 87, 295, 123]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC1"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [255, 142, 295, 178]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC2"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC3"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [345, 217, 385, 253]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC3"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [245, 219, 275, 251]
+	      IconShape		      "rectangular"
+	      Inputs		      "+++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "IABC"
+	      Position		      [380, 98, 410, 112]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "I0"
+	      Position		      [410, 228, 440, 242]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "DAB"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "DAB1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [20, 0]
+	      DstBlock		      "DAB2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IABC,sec"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OC"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC2"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "IABC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "DAB2"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		DstBlock		"OC2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DAB1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"OC1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 130]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DAB"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		DstBlock		"OC"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 200]
+		DstBlock		"Sum"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "OC3"
+	      SrcPort		      1
+	      DstBlock		      "I0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "OC3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DAB+OC V"
+	  Ports			  [1, 2, 0, 0, 0]
+	  Position		  [90, 145, 140, 205]
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "DAB+OC V"
+	    Location		    [362, 222, 874, 595]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VABC,sec"
+	      Position		      [25, 98, 55, 112]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [150, 31, 195, 59]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [150, 91, 195, 119]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB1"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "DAB2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [150, 146, 195, 174]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Data Adquisition Board"
+	      MaskDescription	      "Performs analog filtering, signal condi"
+"tioning and sampling. A single signal is the input, a buffer with the signal "
+"samples is the output. The options include analog filter enable/disable switc"
+"h, type, order and cut-off frequency of the analog filter, conditioning gain,"
+" sampling frequency, number of bits, the length of the buffer."
+	      MaskHelp		      "web(['file:///' which('dab.html')]);"
+	      MaskPromptString	      "Disable Analog Filter|Filter approximat"
+"ion|Order|Free expression filter: numerator(descending order of s)|Free expre"
+"ssion filter: denominator:|Cut-off frequency|Disable Vertical Resolution |Ver"
+"tical Resolution: No. of bits|Vertical Resolution: signal range|Window size|G"
+"ain|Sampling frequency"
+	      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|But"
+"terworth|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16)"
+",edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskCallbackString      "|||||||||||"
+	      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+	      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator="
+"@4;denominator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@"
+"12;"
+	      MaskInitialization      "dab1"
+	      MaskDisplay	      "disp('DAB')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0"
+"|60*40"
+	      System {
+		Name			"DAB2"
+		Location		[4, 52, 808, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "a"
+		  Position		  [15, 78, 45, 92]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "A-D & Buffer"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [275, 70, 335, 100]
+		  FunctionName		  "dab2"
+		  Parameters		  "winsize,fs,dx,resdis"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  TransferFcn
+		  Name			  "Analog Filter"
+		  Position		  [70, 67, 125, 103]
+		  Numerator		  "num"
+		  Denominator		  "den"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [145, 70, 175, 100]
+		  Gain			  "G"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  ZeroOrderHold
+		  Name			  "Zero-Order\nHold"
+		  Position		  [210, 70, 240, 100]
+		  SampleTime		  "1/fs"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "d"
+		  Position		  [360, 78, 390, 92]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[zeros(winsize,1)]"
+		}
+		Line {
+		  SrcBlock		  "A-D & Buffer"
+		  SrcPort		  1
+		  DstBlock		  "d"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  DstBlock		  "Analog Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Zero-Order\nHold"
+		  SrcPort		  1
+		  DstBlock		  "A-D & Buffer"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Zero-Order\nHold"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Analog Filter"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 3, 0, 0, 0]
+	      Position		      [80, 87, 115, 123]
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [365, 87, 400, 123]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [380, 257, 415, 293]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [270, 27, 310, 63]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [270, 87, 310, 123]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC1"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [270, 142, 310, 178]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC2"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC3"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [305, 197, 345, 233]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC3"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC4"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [305, 257, 345, 293]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC4"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "OC5"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [305, 312, 345, 348]
+	      BackgroundColor	      "yellow"
+	      ShowPortLabels	      on
+	      MaskType		      "Orthogonal Components"
+	      MaskDescription	      "The block captures the data window of a"
+" sampled signal and computes the orthogonal components of the signal, i.e. am"
+"plitude and angle. The pre-defined filters include Fourier and Walsh function"
+"s. The free expression filters may also be used. Note: The type of data windo"
+"w affects only the Fourier filter."
+	      MaskHelp		      "This block take the date as its input w"
+"indow of the sampled signal, and convert it into a single orthogonal output. "
+"The output values are direct and quadrature orthogonal components of signal a"
+"t the present sampling instant.\nThe options of the block include type and da"
+"ta window length of pre-defined filters and user-defined filters."
+	      MaskPromptString	      "Type of filter:|Direct filter|Quadratur"
+"e filter|Type of data window|Number of samples per cycle:"
+	      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,"
+"edit,popup(half|full),edit"
+	      MaskTunableValueString  "on,on,on,on,on"
+	      MaskCallbackString      "||||"
+	      MaskEnableString	      "on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on"
+	      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@"
+"5;"
+	      MaskInitialization      "oc2;"
+	      MaskDisplay	      "disp(DIFI);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Fourier|[ ]|[ ]|half|40"
+	      System {
+		Name			"OC5"
+		Location		[193, 285, 534, 427]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x"
+		  Position		  [25, 50, 45, 70]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "OC filter"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [115, 41, 170, 79]
+		  FunctionName		  "oc1"
+		  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "dq"
+		  Position		  [265, 50, 285, 70]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "x"
+		  SrcPort		  1
+		  DstBlock		  "OC filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "OC filter"
+		  SrcPort		  1
+		  DstBlock		  "dq"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [54, 108]
+		  Text			  "v(t) is a vector\nwith width N1"
+		}
+		Annotation {
+		  Position		  [254, 105]
+		  Text			  "v_ort is \na complex number"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Vab"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [255, 199, 270, 226]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Vbc"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [255, 244, 270, 271]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Vca"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [255, 289, 270, 316]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Vphase"
+	      Position		      [435, 98, 465, 112]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Vline"
+	      Position		      [455, 268, 485, 282]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "DAB"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "DAB1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [15, 0]
+	      DstBlock		      "DAB2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VABC,sec"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "DAB"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      Branch {
+		DstBlock		"OC"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 160]
+		Branch {
+		  DstBlock		  "Vab"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Vca"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DAB1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		DstBlock		"OC1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 110]
+		Branch {
+		  Points		  [0, 5]
+		  DstBlock		  "Vab"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 35]
+		  DstBlock		  "Vbc"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DAB2"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"OC2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  Points		  [0, 5]
+		  DstBlock		  "Vbc"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 35]
+		  DstBlock		  "Vca"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Vab"
+	      SrcPort		      1
+	      DstBlock		      "OC3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Vbc"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "OC4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Vca"
+	      SrcPort		      1
+	      Points		      [0, 25]
+	      DstBlock		      "OC5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OC"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 50]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC2"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -45]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Vphase"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      DstBlock		      "Vline"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC4"
+	      SrcPort		      1
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OC3"
+	      SrcPort		      1
+	      Points		      [0, 50]
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OC5"
+	      SrcPort		      1
+	      Points		      [0, -45]
+	      DstBlock		      "Mux1"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [165, 150, 185, 170]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "IABC"
+	  Position		  [165, 38, 195, 52]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "I0"
+	  Position		  [165, 68, 195, 82]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vline"
+	  Position		  [165, 183, 195, 197]
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "IABC,sec"
+	  SrcPort		  1
+	  DstBlock		  "DAB+OC I"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "VABC,sec"
+	  SrcPort		  1
+	  DstBlock		  "DAB+OC V"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DAB+OC V"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DAB+OC I"
+	  SrcPort		  1
+	  DstBlock		  "IABC"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DAB+OC I"
+	  SrcPort		  2
+	  DstBlock		  "I0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DAB+OC V"
+	  SrcPort		  2
+	  DstBlock		  "Vline"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

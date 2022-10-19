@@ -1,0 +1,186 @@
+Model {
+  Name			  "dabex"
+  Version		  2.20
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  StartTime		  "0.0"
+  StopTime		  "0.099"
+  Solver		  ode45
+  RelTol		  "1e-4"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "1e-4"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  SimulationMode	  normal
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWPlaceOutputsASAP	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_vc.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "dabex"
+    Location		    [11, 88, 407, 327]
+    Open		    on
+    ToolBar		    on
+    StatusBar		    off
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      Scope
+      Name		      "Analog&Digital\nSignals"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [320, 85, 350, 115]
+      BackgroundColor	      green
+      Floating		      off
+      Location		      [524, 34, 953, 325]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      xonly
+      TimeRange		      "auto"
+      YMin		      "-10             "
+      YMax		      "10              "
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DAB"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [150, 65, 200, 115]
+      BackgroundColor	      yellow
+      SourceBlock	      "elements/DAB"
+      SourceType	      "Data Adquisition Board"
+      filter		      off
+      approx		      Bessel
+      order		      2
+      numerator		      "[]"
+      denominator	      "[]"
+      freq		      "200"
+      resdis		      off
+      vertres		      12
+      xmax		      "10"
+      winsize		      "1"
+      G			      "1.0"
+      fs		      "60*20"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Fault Signal"
+      Ports		      [0, 2, 0, 0, 0]
+      Position		      [25, 75, 90, 135]
+      BackgroundColor	      lightBlue
+      SourceBlock	      "inputs/Fault Signal"
+      SourceType	      "Fault Signal Generator"
+      pre_fault		      "[10 45]"
+      post_fault	      "[4 90]"
+      fr_dc		      "[60 1.25/60 0.0004]"
+      oscA		      "[1.0 0.8 0.9]"
+      oscf		      "[800 1000 3000]"
+      oscT		      "[0.050 0.030 0.060]"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [235, 82, 270, 118]
+      Inputs		      "2"
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Analog&Digital\nSignals"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Fault Signal"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"DAB"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 45; 100, 0]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "DAB"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      1
+    }
+  }
+}

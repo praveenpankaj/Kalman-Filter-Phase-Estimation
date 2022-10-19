@@ -1,0 +1,161 @@
+Library {
+  Name			  "dab"
+  Version		  2.20
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "dab"
+    Location		    [70, 200, 570, 460]
+    Open		    on
+    ToolBar		    on
+    StatusBar		    on
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      SubSystem
+      Name		      "  "
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [185, 80, 235, 130]
+      ShowPortLabels	      on
+      MaskType		      "Data Adquisition Board"
+      MaskDescription	      "Takes the instantaneous value of the input sign"
+"al and convert it to the data window of samples. "
+      MaskHelp		      "web(['file:///' which('dab.html')]);"
+      MaskPromptString	      "Disable Analog Filter|Filter approximation|Orde"
+"r|Free expression filter: numerator(descending order of s)|Free expression fi"
+"lter: denominator:|Cut-off frequency|Disable Vertical Resolution |Vertical Re"
+"solution: No. of bits|Vertical Resolution: signal range|Window size|Gain|Samp"
+"ling frequency"
+      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|Butterworth"
+"|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16),edit,ed"
+"it,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator=@4;denom"
+"inator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@12;"
+      MaskInitialization      "dab1"
+      MaskDisplay	      "disp('DAB')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0|60*40"
+      System {
+	Name			"  "
+	Location		[0, 52, 804, 609]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [15, 78, 45, 92]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "A/D & Buffer"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [275, 70, 335, 100]
+	  FunctionName		  "dab2"
+	  Parameters		  "winsize,fs,dx,resdis"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Analog Filter"
+	  Position		  [70, 67, 125, 103]
+	  Numerator		  "num"
+	  Denominator		  "den"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [145, 70, 175, 100]
+	  Gain			  "G"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold"
+	  Position		  [210, 70, 240, 100]
+	  SampleTime		  "1/fs"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d"
+	  Position		  [360, 78, 390, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[zeros(winsize,1)]"
+	}
+	Line {
+	  SrcBlock		  "Analog Filter"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Zero-Order\nHold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold"
+	  SrcPort		  1
+	  DstBlock		  "A/D & Buffer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  DstBlock		  "Analog Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "A/D & Buffer"
+	  SrcPort		  1
+	  DstBlock		  "d"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

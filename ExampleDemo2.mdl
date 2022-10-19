@@ -1,0 +1,1146 @@
+Model {
+  Name			  "ExampleDemo2"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Apr 25 02:32:55 2003"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Praveen"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Apr 25 13:39:03 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:36>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "1.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      Realization	      "auto"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ExampleDemo2"
+    Location		    [2, 98, 1014, 720]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "  "
+      Ports		      [1, 1]
+      Position		      [350, 213, 400, 267]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Data Adquisition Board"
+      MaskDescription	      "Takes the instantaneous value of the input sign"
+"al and convert it to the data window of samples. "
+      MaskHelp		      "web(['file:///' which('dab.html')]);"
+      MaskPromptString	      "Disable Analog Filter|Filter approximation|Orde"
+"r|Free expression filter: numerator(descending order of s)|Free expression fi"
+"lter: denominator:|Cut-off frequency|Disable Vertical Resolution |Vertical Re"
+"solution: No. of bits|Vertical Resolution: signal range|Window size|Gain|Samp"
+"ling frequency"
+      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|Butterworth"
+"|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16),edit,ed"
+"it,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,,,,"
+      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator=@4;denom"
+"inator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@12;"
+      MaskInitialization      "dab1"
+      MaskDisplay	      "disp('DAB')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "on|Butterworth|3|[]|[]|180|on|8|100|1|1.0|60*20"
+      System {
+	Name			"  "
+	Location		[0, 52, 804, 609]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [15, 78, 45, 92]
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "A/D & Buffer"
+	  Ports			  [1, 1]
+	  Position		  [275, 70, 335, 100]
+	  FunctionName		  "dab2"
+	  Parameters		  "winsize,fs,dx,resdis"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Analog Filter"
+	  Position		  [70, 67, 125, 103]
+	  Numerator		  "num"
+	  Denominator		  "den"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [145, 70, 175, 100]
+	  Gain			  "G"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold"
+	  Position		  [210, 70, 240, 100]
+	  SampleTime		  "1/fs"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d"
+	  Position		  [360, 78, 390, 92]
+	  InitialOutput		  "[zeros(winsize,1)]"
+	}
+	Line {
+	  SrcBlock		  "Analog Filter"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Zero-Order\nHold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold"
+	  SrcPort		  1
+	  DstBlock		  "A/D & Buffer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  DstBlock		  "Analog Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "A/D & Buffer"
+	  SrcPort		  1
+	  DstBlock		  "d"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "DC offset"
+      Ports		      [1]
+      Position		      [685, 397, 765, 443]
+      BackgroundColor	      "[0.839216, 0.839216, 0.839216]"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 1]
+      Position		      [465, 82, 500, 118]
+      Outputs		      "1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Display Analog & Digital\nSignals"
+      Ports		      [1]
+      Position		      [705, 75, 735, 105]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      Location		      [5, 53, 1029, 743]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"INPUT SIGNAL"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      TimeRange		      "1"
+      YMin		      "-1.6"
+      YMax		      "1.6"
+      SaveName		      "ScopeData1"
+      DataFormat	      "Array"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Estimated Amplitude, Phase and DC offset"
+      Ports		      [3]
+      Position		      [685, 207, 765, 273]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      Location		      [5, 80, 1020, 735]
+      Open		      off
+      NumInputPorts	      "3"
+      TickLabels	      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"ESTIMATED FUNDAMENTAL SIGNAL AMPLITUDE"
+	axes2			"PHASE ANGLE "
+	axes3			"DC OFFSET VALUE"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+	axes2			""
+	axes3			""
+      }
+      TimeRange		      "1"
+      YMin		      "0~-200~-0.2"
+      YMax		      "1.4~200~0.6000000000000001"
+      DataFormat	      "StructureWithTime"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [530, 72, 565, 108]
+      Inputs		      "2"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Phase Angle (in degrees)"
+      Ports		      [1]
+      Position		      [680, 327, 760, 373]
+      BackgroundColor	      "[0.839216, 0.839216, 0.839216]"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Recursive Kalman Filter Block"
+      Ports		      [1, 3]
+      Position		      [445, 202, 555, 278]
+      BackgroundColor	      "lightBlue"
+      TreatAsAtomicUnit	      off
+      MaskType		      "Kalman Block"
+      MaskDescription	      "Measures the Phasor voltage values using the Ka"
+"lman filter. \nThe input to the block is 'Zs(n)', the signal at time nT. 'f' "
+"is the fundamental frequency of the signal, and the harmonics are assumed to "
+"be integral multiple of this.\n'C' is the ralationship between voltage and ph"
+"asor values. The default value is [1,0,1] assuming zero imaginary component a"
+"nd non-zero DC component.\nMeasurement noise variance 'sigman' models the noi"
+"se during the voltage measurement.\nProcess variance 'sigmav' denotes the var"
+"iation in the measurement of voltage values. \n'M' denotes the single step va"
+"riation\nDecaying DC component models the decreasing nature of the DC."
+      MaskPromptString	      "Fundamental Frequency of Input Signal (f) in Hz"
+"|Sampling Frequency (Fs) in samples per second|Initial State (x0)|Voltage-Pha"
+"sor relation matrix (C)|Measurement Noise Variance (Sigma n)|Process noise va"
+"riance (Sigma v)|Single step transition error covariance (M)|Decaying DC Para"
+"meter (lambda)"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,"
+      MaskVariables	      "f=@1;Fs=@2;X0=@3;C=@4;sigman=@5;sigmav=@6;M=@7;"
+"lambda=@8;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "60|32|[0;0;0]|[1 0 1]|0.01|0.005|[(0.24^2) 0 0;"
+"0 (0.24^2) 0;0 0 (0.24^2)]|0.001"
+      System {
+	Name			"Recursive Kalman Filter Block"
+	Location		[6, 94, 1018, 716]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Zs"
+	  Position		  [215, 203, 245, 217]
+	  BackgroundColor	  "[0.980392, 0.647059, 0.447059]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Filter Module"
+	  Ports			  [1, 3]
+	  Position		  [520, 160, 630, 260]
+	  BackgroundColor	  "lightBlue"
+	  Priority		  "2"
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Filter Module"
+	    Location		    [2, 74, 1014, 724]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Zs"
+	      Position		      [215, 213, 245, 227]
+	      BackgroundColor	      "[0.980392, 0.647059, 0.447059]"
+	    }
+	    Block {
+	      BlockType		      ComplexToMagnitudeAngle
+	      Name		      "Complex to\nMagnitude-Angle"
+	      Ports		      [1, 2]
+	      Position		      [540, 138, 570, 167]
+	      Output		      "Magnitude and angle"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 3]
+	      Position		      [385, 201, 390, 239]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "3"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Kalman Filter"
+	      Ports		      [1, 1]
+	      Position		      [270, 180, 355, 260]
+	      BackgroundColor	      "[0.686275, 0.823529, 0.960784]"
+	      Priority		      "2"
+	      FontName		      "Arial"
+	      FontSize		      11
+	      FontWeight	      "bold"
+	      FunctionName	      "kfamp"
+	      Parameters	      "X0 C M"
+	      MaskType		      "Kalman Filter Block"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [655, 205, 700, 240]
+	      ShowAdditionalParam     on
+	      InputSameDT	      off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Rad2Degrees"
+	      Position		      [545, 215, 575, 245]
+	      Value		      "180/pi"
+	    }
+	    Block {
+	      BlockType		      RealImagToComplex
+	      Name		      "Real-Imag to\nComplex"
+	      Ports		      [2, 1]
+	      Position		      [465, 138, 495, 167]
+	      Input		      "Real and imag"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Signal Amplitude"
+	      Position		      [750, 138, 780, 152]
+	      BackgroundColor	      "[0.980392, 0.647059, 0.447059]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Phase Value"
+	      Position		      [755, 218, 785, 232]
+	      BackgroundColor	      "[0.980392, 0.647059, 0.447059]"
+	      Port		      "2"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DC Amplitude"
+	      Position		      [755, 263, 785, 277]
+	      BackgroundColor	      "[0.980392, 0.647059, 0.447059]"
+	      Port		      "3"
+	    }
+	    Line {
+	      SrcBlock		      "Zs"
+	      SrcPort		      1
+	      DstBlock		      "Kalman Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Kalman Filter"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -65]
+	      DstBlock		      "Real-Imag to\nComplex"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [40, 0; 0, -60]
+	      DstBlock		      "Real-Imag to\nComplex"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [15, 0; 0, 40]
+	      DstBlock		      "DC Amplitude"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "Phase Value"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Real-Imag to\nComplex"
+	      SrcPort		      1
+	      DstBlock		      "Complex to\nMagnitude-Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle"
+	      SrcPort		      1
+	      DstBlock		      "Signal Amplitude"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Rad2Degrees"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle"
+	      SrcPort		      2
+	      Points		      [35, 0; 0, 55]
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Parameter Calculation Module"
+	  Ports			  [1, 1]
+	  Position		  [285, 161, 475, 259]
+	  BackgroundColor	  "lightBlue"
+	  Priority		  "1"
+	  FontName		  "Arial"
+	  FontSize		  11
+	  TreatAsAtomicUnit	  off
+	  MaskDisplay		  "disp('PARAMETER MODULE');\nport_label('inpu"
+"t',1,'Zs in');\nport_label('output',1,'Zs out');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Parameter Calculation Module"
+	    Location		    [2, 98, 1014, 720]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Zs In"
+	      Position		      [355, 228, 385, 242]
+	      BackgroundColor	      "[1.000000, 0.176471, 0.176471]"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Kalman Parameter Block"
+	      Ports		      []
+	      Position		      [415, 165, 536, 193]
+	      BackgroundColor	      "[0.686275, 0.823529, 0.960784]"
+	      Priority		      "1"
+	      FontName		      "Arial"
+	      FontSize		      11
+	      FontWeight	      "bold"
+	      FunctionName	      "KalmanParameters"
+	      Parameters	      "Fs f sigman sigmav M lambda"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Zs Out"
+	      Position		      [565, 228, 595, 242]
+	      BackgroundColor	      "[1.000000, 0.176471, 0.176471]"
+	    }
+	    Line {
+	      SrcBlock		      "Zs In"
+	      SrcPort		      1
+	      DstBlock		      "Zs Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Amplitude"
+	  Position		  [675, 168, 705, 182]
+	  BackgroundColor	  "[0.980392, 0.647059, 0.447059]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Phase"
+	  Position		  [675, 203, 705, 217]
+	  BackgroundColor	  "[0.980392, 0.647059, 0.447059]"
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DC Amplitude"
+	  Position		  [680, 238, 710, 252]
+	  BackgroundColor	  "[0.980392, 0.647059, 0.447059]"
+	  Port			  "3"
+	}
+	Line {
+	  SrcBlock		  "Zs"
+	  SrcPort		  1
+	  DstBlock		  "Parameter Calculation Module"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Parameter Calculation Module"
+	  SrcPort		  1
+	  DstBlock		  "Filter Module"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Filter Module"
+	  SrcPort		  1
+	  DstBlock		  "Amplitude"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Filter Module"
+	  SrcPort		  3
+	  DstBlock		  "DC Amplitude"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Filter Module"
+	  SrcPort		  2
+	  DstBlock		  "Phase"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Signal\nGenerator"
+      Ports		      [0, 1]
+      Position		      [220, 208, 255, 252]
+      BackgroundColor	      "lightBlue"
+      TreatAsAtomicUnit	      off
+      MaskType		      "Signal Generator"
+      MaskPromptString	      "Amplitude 1|Frequency 1 [Hz]|Amplitude 2|Freque"
+"ncy 2 [Hz]|Amplitude 3|Frequency 3 [Hz]|Start time [sec]"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,"
+      MaskVariables	      "A1=@1;f1=@2;A2=@3;f2=@4;A3=@5;f3=@6;tstart=@7;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|60|0|2*60|0|5*60|1.5/60"
+      System {
+	Name			"Signal\nGenerator"
+	Location		[100, 215, 385, 452]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [175, 102, 205, 133]
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "Sine Wave"
+	  Position		  [25, 25, 55, 55]
+	  SineType		  "Time based"
+	  Amplitude		  "A1"
+	  Frequency		  "f1*2*pi"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "Sine Wave1"
+	  Position		  [25, 95, 55, 125]
+	  SineType		  "Time based"
+	  Amplitude		  "A2"
+	  Frequency		  "f2*2*pi"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "Sine Wave2"
+	  Position		  [25, 160, 55, 190]
+	  SineType		  "Time based"
+	  Amplitude		  "A3"
+	  Frequency		  "f3*2*pi"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Step
+	  Name			  "Step"
+	  Position		  [105, 180, 135, 210]
+	  Time			  "tstart"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [3, 1]
+	  Position		  [90, 66, 120, 154]
+	  Inputs		  "+++"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "x"
+	  Position		  [230, 113, 260, 127]
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Sine Wave"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sine Wave1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sine Wave2"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Step"
+	  SrcPort		  1
+	  Points		  [0, -70]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "x"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [290, 222, 320, 253]
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Voltage Amplitude"
+      Ports		      [1]
+      Position		      [680, 143, 765, 187]
+      BackgroundColor	      "[0.839216, 0.839216, 0.839216]"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "d.c.\ncomponent"
+      Position		      [220, 295, 250, 325]
+      BackgroundColor	      "lightBlue"
+      Time		      "1.5/60"
+      After		      "0.5"
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"  "
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -160]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "d.c.\ncomponent"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Signal\nGenerator"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Display Analog & Digital\nSignals"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "  "
+      SrcPort		      1
+      Points		      [0, 0; 15, 0]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Demux"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Recursive Kalman Filter Block"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Recursive Kalman Filter Block"
+      SrcPort		      2
+      Points		      [55, 0]
+      Branch {
+	DstBlock		"Estimated Amplitude, Phase and DC offset"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 110]
+	DstBlock		"Phase Angle (in degrees)"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Recursive Kalman Filter Block"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	Points			[0, -50]
+	DstBlock		"Voltage Amplitude"
+	DstPort			1
+      }
+      Branch {
+	Points			[55, 0]
+	DstBlock		"Estimated Amplitude, Phase and DC offset"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Recursive Kalman Filter Block"
+      SrcPort		      3
+      Points		      [35, 0]
+      Branch {
+	Points			[0, 155]
+	DstBlock		"DC offset"
+	DstPort			1
+      }
+      Branch {
+	Points			[75, 0]
+	DstBlock		"Estimated Amplitude, Phase and DC offset"
+	DstPort			3
+      }
+    }
+    Annotation {
+      Name		      "FUNDAMENTAL MAGNITUDE MEASUREMENT (WITH DC OFFS"
+"ET, NO HARMONICS)"
+      Position		      [508, 23]
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      DropShadow	      on
+      FontName		      "Arial Black"
+      FontSize		      14
+    }
+  }
+}

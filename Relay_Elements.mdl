@@ -1,0 +1,2269 @@
+Library {
+  Name			  "Relay_Elements"
+  Version		  2.20
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "Relay_Elements"
+    Location		    [93, 139, 639, 463]
+    Open		    on
+    ToolBar		    on
+    StatusBar		    on
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      SubSystem
+      Name		      "\n"
+      Ports		      [1, 5, 0, 0, 0]
+      Position		      [35, 136, 90, 204]
+      BackgroundColor	      yellow
+      ShowName		      off
+      ShowPortLabels	      on
+      MaskType		      "Digital Fourier Transform"
+      MaskDescription	      "Captures the data window of a sampled signal an"
+"d computes the phasors (magnitude and angle) of up to 5 selected harmonics in"
+"cluding the dc component. The fundamental frequency, the data window size as "
+"well as the array that specify the requested harmonic must be defined."
+      MaskHelp		      "file:///c:/matlab/bin/dft.html"
+      MaskPromptString	      "Fundamental frequency (Hz)|Window size |Request"
+"ed harmonics (up to five harmonics)"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskVariables	      "fo=@1;window_size=@2;harmonic=@3;"
+      MaskDisplay	      "disp('DFT')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "60|20|[1 2 3 4 5]"
+      System {
+	Name			"\n"
+	Location		[133, 55, 717, 459]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "\n"
+	  Position		  [70, 209, 90, 231]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 5, 0, 0, 0]
+	  Position		  [315, 113, 365, 327]
+	  Outputs		  "5"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "FFT"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 114, 250, 326]
+	  FunctionName		  "dft1"
+	  Parameters		  "window_size, fo,harmonic"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "1\n"
+	  Position		  [445, 130, 465, 150]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "2\n"
+	  Position		  [445, 170, 465, 190]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "3\n"
+	  Position		  [445, 210, 465, 230]
+	  Port			  "3"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "4\n"
+	  Position		  [445, 250, 465, 270]
+	  Port			  "4"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "5\n"
+	  Position		  [445, 290, 465, 310]
+	  Port			  "5"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "FFT"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "1\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "2\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "3\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "5\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "4\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n"
+	  SrcPort		  1
+	  DstBlock		  "FFT"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "  DE_1"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [245, 137, 300, 193]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Directional Element 1"
+      MaskDescription	      "This block has two phasor inputs: voltage and c"
+"urrent. The operating characteristic is defined by two angles. The output is "
+"1 when the current phasor falls into the operating characteristic."
+      MaskHelp		      "web(['file:///' which('zc.html')]);\n\n"
+      MaskPromptString	      "Angle alpha [deg]|Angle Beta [deg]|Sampling fre"
+"cuency (Hz):"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskVariables	      "alpha=@1;beta=@2;fs=@3;"
+      MaskInitialization      "DE_11;\n"
+      MaskDisplay	      "plot([0.2 0.8],[0.5 0.5],[0.5 0.6],[0.5 0.8],[0"
+".5,xalpha],[0.5,yalpha],[0.5,xbeta],[0.5,ybeta]);\n\n\n\n\n\n\n \n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      normalized
+      MaskValueString	      "10|170|20*60"
+      System {
+	Name			"  DE_1"
+	Location		[263, 82, 912, 681]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "V"
+	  Position		  [150, 80, 185, 100]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "I"
+	  Position		  [150, 160, 185, 180]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [225, 117, 260, 153]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [285, 120, 345, 150]
+	  FunctionName		  "DE_12"
+	  Parameters		  "alpha,beta,fs"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dir"
+	  Position		  [365, 125, 385, 145]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "dir"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "V"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "I"
+	  SrcPort		  1
+	  Points		  [0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "-VG-2-"
+      Ports		      [6, 6, 0, 0, 0]
+      Position		      [140, 224, 205, 296]
+      BackgroundColor	      yellow
+      FontWeight	      bold
+      ShowPortLabels	      on
+      MaskType		      "Transformer Masked Block"
+      MaskDescription	      "Captures the instantaneous values of six phase "
+"currents and computes the differential and restraining currents of a 2-windin"
+"g transformer. The type of transformer, vector group, voltages and CT ratios "
+"for the primary and secondary sides of the transformers must be specified. Se"
+"lection of type of transformer and vector group.\n"
+      MaskHelp		      "The block generates iD and iR for given input d"
+"ata IH, IX, each CT ratio."
+      MaskPromptString	      "Type of Transformer|Vector Group|Primary Voltag"
+"e|Secondary Voltage|CT Ratio of H |CT Ratio of X"
+      MaskStyleString	      "popup(wye - delta|delta - wye|wye - wye|delta -"
+" delta),popup(0|1|3|5|6|7|9|11),edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskVariables	      "trtype=@1;vector=@2;Vh=@3;Vx=@4;nCTH=@5;nCTX=@6"
+";"
+      MaskInitialization      "vg_20;"
+      MaskDisplay	      "disp(icon)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "wye - wye|0|345000|389800|400|400"
+      System {
+	Name			"-VG-2-"
+	Location		[130, 100, 680, 421]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "iHA"
+	  Position		  [15, 48, 45, 62]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "iHB"
+	  Position		  [15, 78, 45, 92]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "iHC"
+	  Position		  [15, 108, 45, 122]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "iXA"
+	  Position		  [15, 138, 45, 152]
+	  Port			  "4"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "iXB"
+	  Position		  [15, 168, 45, 182]
+	  Port			  "5"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "iXC"
+	  Position		  [15, 198, 45, 212]
+	  Port			  "6"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "\n"
+	  Ports			  [6, 1, 0, 0, 0]
+	  Position		  [75, 45, 150, 215]
+	  BackgroundColor	  yellow
+	  DropShadow		  on
+	  FontSize		  20
+	  FontWeight		  bold
+	  Inputs		  "6"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "\n\n"
+	  Ports			  [1, 6, 0, 0, 0]
+	  Position		  [270, 46, 340, 214]
+	  BackgroundColor	  yellow
+	  DropShadow		  on
+	  FontSize		  20
+	  FontWeight		  bold
+	  Outputs		  "6"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "\n\n\n\n"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [170, 85, 250, 175]
+	  BackgroundColor	  lightBlue
+	  DropShadow		  on
+	  FontSize		  24
+	  FontWeight		  bold
+	  FunctionName		  "calcu"
+	  Parameters		  "trtype,vector,Vh,Vx,nCTH,nCTX"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iDa"
+	  Position		  [375, 48, 405, 62]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iDb"
+	  Position		  [375, 78, 405, 92]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iDc"
+	  Position		  [375, 108, 405, 122]
+	  Port			  "3"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iRa"
+	  Position		  [375, 138, 405, 152]
+	  Port			  "4"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iRb"
+	  Position		  [375, 168, 405, 182]
+	  Port			  "5"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iRc"
+	  Position		  [375, 198, 405, 212]
+	  Port			  "6"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "\n"
+	  SrcPort		  1
+	  DstBlock		  "\n\n\n\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n\n\n\n"
+	  SrcPort		  1
+	  DstBlock		  "\n\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  1
+	  DstBlock		  "iDa"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iHA"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  2
+	  DstBlock		  "iDb"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iHB"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  3
+	  DstBlock		  "iDc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iHC"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  4
+	  DstBlock		  "iRa"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iXA"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  5
+	  DstBlock		  "iRb"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iXB"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "\n\n"
+	  SrcPort		  6
+	  DstBlock		  "iRc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iXC"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  6
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "BM"
+      Ports		      [2, 4, 0, 0, 0]
+      Position		      [140, 137, 195, 198]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "BM"
+      MaskDescription	      "This block is fed by the orthogonal components "
+"of the voltage and current signals (amplitude and angle in degrees). Its outp"
+"uts are the current and voltage amplitudes, active and reactive powers and im"
+"pedance components. The options include type of post-filtering (none, mean an"
+"d median) with adjustable window length."
+      MaskHelp		      "This bolck takes its two complex inputs the vol"
+"tage and current orthogonal compenents at the presenting sampling instant, an"
+"d convent them into voltage and current magnitude, complex power, impedance."
+"\n\nThe outputs may be filtered and two filters may be used. They are mean fi"
+"lter and median filter. All these filter may have different widths of their d"
+"ata windows. "
+      MaskPromptString	      "Type of post filtration for voltage|Width of po"
+"st filtration data window for voltage|Type of post filtration for current|Wid"
+"th of post filtration data window for current|Type of post filtration for pow"
+"er|Width of post filtration data window for power|Type of post filtration for"
+" impedance|Width of post filtration data window for impedance"
+      MaskStyleString	      "popup(none|mean|median),edit,popup(none|mean|me"
+"dian),edit,popup(none|mean|median),edit,popup(none|mean|median),edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskVariables	      "tpostv=@1;plenv=@2;tposti=@3;pleni=@4;tposts=@5"
+";plens=@6;tpostz=@7;plenz=@8;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "none|4|none|4|none|4|none|4"
+      System {
+	Name			"BM"
+	Location		[617, 330, 950, 476]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "v_ort"
+	  Position		  [80, 43, 110, 57]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i_ort"
+	  Position		  [80, 73, 110, 87]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "BM"
+	  Ports			  [2, 4, 0, 0, 0]
+	  Position		  [135, 34, 190, 91]
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "BM"
+	    Location		    [78, 369, 808, 699]
+	    Open		    off
+	    ToolBar		    off
+	    StatusBar		    off
+	    ScreenColor		    white
+	    PaperOrientation	    landscape
+	    PaperPositionMode	    auto
+	    PaperType		    usletter
+	    PaperUnits		    inches
+	    Block {
+	      BlockType		      Inport
+	      Name		      "v_ort"
+	      Position		      [25, 105, 45, 125]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "i_ort"
+	      Position		      [25, 160, 45, 180]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [80, 97, 115, 133]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [80, 152, 115, 188]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      Ports		      [1, 6, 0, 0, 0]
+	      Position		      [310, 103, 345, 177]
+	      Outputs		      "6"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [4, 1, 0, 0, 0]
+	      Position		      [175, 122, 210, 158]
+	      Inputs		      "4"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [585, 149, 620, 171]
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux2"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [585, 249, 620, 271]
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 21, 510, 49]
+	      FunctionName	      "bm2"
+	      Parameters	      " tpostv, plenv"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 71, 510, 99]
+	      FunctionName	      "bm2"
+	      Parameters	      " tposti, pleni"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 121, 510, 149]
+	      FunctionName	      "bm2"
+	      Parameters	      " tposts, plens"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter3"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 171, 510, 199]
+	      FunctionName	      "bm2"
+	      Parameters	      " tposts, plens"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter4"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 221, 510, 249]
+	      FunctionName	      "bm2"
+	      Parameters	      " tpostz, plenz"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "post filter5"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [455, 266, 510, 294]
+	      FunctionName	      "bm2"
+	      Parameters	      " tpostz, plenz"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfunbm"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [225, 125, 285, 155]
+	      FunctionName	      "bm1"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "V"
+	      Position		      [680, 25, 700, 45]
+	      Port		      "1"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "I"
+	      Position		      [680, 75, 700, 95]
+	      Port		      "2"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "S"
+	      Position		      [680, 150, 700, 170]
+	      Port		      "3"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Z"
+	      Position		      [685, 250, 705, 270]
+	      Port		      "4"
+	      OutputWhenDisabled      held
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "post filter5"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -15]
+	      DstBlock		      "Mux2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "post filter4"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 20]
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "post filter3"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -20]
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "post filter2"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 20]
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux2"
+	      SrcPort		      1
+	      DstBlock		      "Z"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      DstBlock		      "S"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "post filter1"
+	      SrcPort		      1
+	      DstBlock		      "I"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "post filter"
+	      SrcPort		      1
+	      DstBlock		      "V"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "sfunbm"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [25, 20]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -15]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      Points		      [25, -25]
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "sfunbm"
+	      SrcPort		      1
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [15, 0; 0, 10]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "v_ort"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "i_ort"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      3
+	      DstBlock		      "post filter2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      Points		      [65, 0; 0, -40]
+	      DstBlock		      "post filter1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -80]
+	      DstBlock		      "post filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      4
+	      Points		      [75, 0; 0, 40]
+	      DstBlock		      "post filter3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      5
+	      Points		      [45, 0; 0, 80]
+	      DstBlock		      "post filter4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      6
+	      Points		      [20, 0; 0, 115]
+	      DstBlock		      "post filter5"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "V"
+	  Position		  [280, 33, 310, 47]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "I"
+	  Position		  [215, 48, 245, 62]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "S"
+	  Position		  [275, 63, 305, 77]
+	  Port			  "3"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Z"
+	  Position		  [215, 78, 245, 92]
+	  Port			  "4"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "BM"
+	  SrcPort		  1
+	  DstBlock		  "V"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "v_ort"
+	  SrcPort		  1
+	  DstBlock		  "BM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BM"
+	  SrcPort		  2
+	  DstBlock		  "I"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "BM"
+	  SrcPort		  3
+	  DstBlock		  "S"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i_ort"
+	  SrcPort		  1
+	  DstBlock		  "BM"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BM"
+	  SrcPort		  4
+	  DstBlock		  "Z"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Bias\nCharacteristic"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [240, 36, 295, 94]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Bias Characteristic"
+      MaskDescription	      "Compares its two input signals using a bias cha"
+"racteristic. This characteristic is defined point-by-point."
+      MaskPromptString	      "Bias characteristic |Sampling frequency [sample"
+"s per cycle]"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskVariables	      "BC=@1;fs=@2;"
+      MaskInitialization      "bc2"
+      MaskDisplay	      "plot([xo xo],[yo y1]);\nplot([xo x1],[yo yo]);"
+"\n\n\nplot(R,O);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      port
+      MaskIconUnits	      autoscale
+      MaskValueString	      "[ 0 0;1 0.5 ;3 0.8; 5 4; 7 4.2 ; 8 4.22] |60*20"
+      System {
+	Name			"Bias\nCharacteristic"
+	Location		[264, 168, 561, 320]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "O"
+	  Position		  [20, 23, 40, 37]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "R"
+	  Position		  [20, 93, 40, 107]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [70, 47, 105, 83]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [150, 40, 210, 90]
+	  FunctionName		  "bc1"
+	  Parameters		  "BC,fs"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "\n"
+	  Position		  [260, 58, 280, 72]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "R"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "O"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "\n"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DAB"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [35, 35, 85, 85]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Data Adquisition Board"
+      MaskDescription	      "Performs Analog filtering, signal conditioning "
+"and sampling. A single signal is the input, a buffer with the signal samples "
+"is the output. The options include analog filter enable/disable switch, type,"
+" order and cut-off frequency of the analog filter, conditioning gain, samplin"
+"g frequency, number of bits, the length of the buffer."
+      MaskHelp		      "web(['file:///' which('dab.html')]);"
+      MaskPromptString	      "Disable Analog Filter|Filter approximation|Orde"
+"r|Free expression filter: numerator(descending order of s)|Free expression fi"
+"lter: denominator:|Cut-off frequency|Disable Vertical Resolution |Vertical Re"
+"solution: No. of bits|Vertical Resolution: signal range|Window size|Gain|Samp"
+"ling frequency"
+      MaskStyleString	      "checkbox,popup(Bessel|Tschebyscheff|Butterworth"
+"|free expression),popup(2|3|4),edit,edit,edit,checkbox,popup(8|12|16),edit,ed"
+"it,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVariables	      "filter=@1;approx=@2;order=@3;numerator=@4;denom"
+"inator=@5;freq=@6;resdis=@7;vertres=@8;xmax=@9;winsize=@10;G=@11;fs=@12;"
+      MaskInitialization      "dab1"
+      MaskDisplay	      "disp('DAB')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "off|Bessel|2|[]|[]|180|off|12|10|40|1.0|60*40"
+      System {
+	Name			"DAB"
+	Location		[0, 52, 804, 609]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [15, 78, 45, 92]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "A/D & Buffer"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [275, 70, 335, 100]
+	  FunctionName		  "dab2"
+	  Parameters		  "winsize,fs,dx,resdis"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Analog Filter"
+	  Position		  [70, 67, 125, 103]
+	  Numerator		  "num"
+	  Denominator		  "den"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [145, 70, 175, 100]
+	  Gain			  "G"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold"
+	  Position		  [210, 70, 240, 100]
+	  SampleTime		  "1/fs"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d"
+	  Position		  [360, 78, 390, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[zeros(winsize,1)]"
+	}
+	Line {
+	  SrcBlock		  "Analog Filter"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Zero-Order\nHold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold"
+	  SrcPort		  1
+	  DstBlock		  "A/D & Buffer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  DstBlock		  "Analog Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "A/D & Buffer"
+	  SrcPort		  1
+	  DstBlock		  "d"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DEIM"
+      Ports		      [2, 2, 0, 0, 0]
+      Position		      [40, 224, 90, 291]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Differential Equation based  Impedance Measurem"
+"ent"
+      MaskDescription	      "Measures the impedance based on the differentia"
+"l equation approach. The options include pre- and post-filtering, the method "
+"of differentiation, and the method of generating the missing equation."
+      MaskHelp		      "web(['file:///\" which('DEIM.html')]);"
+      MaskPromptString	      "Type of pre-processing|Type of methods for solu"
+"tion|Type of numerical integration/differentation method|Type of post process"
+"ing filters|Size of input window|Size of data window for the least square met"
+"hod|Size of data window for succesive samples method|Size of data window for "
+"post processing filters|Sampling frequency [Hz]|Fundamental frequency"
+      MaskStyleString	      "popup(none|quarter Fourier filter|half Fourier "
+"filter|quarter Walsh filter|half Walsh filter),popup(Two points in time dislo"
+"cated by m samples|The least square method),popup(Euler|Trapezoidal rule),pop"
+"up(none|mean filter|median filter),edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on"
+      MaskVariables	      "type_pre=@1;meth_sol=@2;num_meth=@3;type_post=@"
+"4;N=@5;d=@6;m=@7;p=@8;f=@9;f1=@10;"
+      MaskInitialization      "N1=f/f1;\nTsamp=1/f;\nTw=(N1+1)*Tsamp;\ndeim1\n"
+"\n\n\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "none|The least square method|Euler|none|10|10|5"
+"|10|20*60|60"
+      System {
+	Name			"DEIM"
+	Location		[0, 52, 644, 489]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "V"
+	  Position		  [15, 33, 45, 47]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "I"
+	  Position		  [15, 103, 45, 117]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2, 0, 0, 0]
+	  Position		  [525, 153, 570, 202]
+	  Outputs		  "2"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [240, 92, 275, 128]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Post processing"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [440, 165, 500, 195]
+	  FunctionName		  "deim6"
+	  Parameters		  "Tsamp,in,type_post"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Pre processing"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [60, 25, 120, 55]
+	  FunctionName		  "deim2"
+	  Parameters		  "N,nin,Tsamp,Tw,type_pre"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Pre processing1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [60, 95, 120, 125]
+	  FunctionName		  "deim2"
+	  Parameters		  "N,nin,Tsamp,Tw,type_pre"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Z1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [295, 95, 355, 125]
+	  FunctionName		  "deim4"
+	  Parameters		  "Tsamp,k,meth_sol,num_meth"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "buffer_m/d/2"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [145, 60, 205, 90]
+	  FunctionName		  "deim3"
+	  Parameters		  "Tsamp,nin,k"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "buffer_m/d/3"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [145, 130, 205, 160]
+	  FunctionName		  "deim3"
+	  Parameters		  "Tsamp,nin,k"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "buffer_m/d/4"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [350, 165, 410, 195]
+	  FunctionName		  "deim5"
+	  Parameters		  "Tsamp,in"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "R"
+	  Position		  [605, 158, 635, 172]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "X"
+	  Position		  [605, 188, 635, 202]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Z1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 45; -55, 0; 0, 25]
+	  DstBlock		  "buffer_m/d/4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "I"
+	  SrcPort		  1
+	  DstBlock		  "Pre processing1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "V"
+	  SrcPort		  1
+	  DstBlock		  "Pre processing"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "R"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [15, 0]
+	  DstBlock		  "X"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "buffer_m/d/4"
+	  SrcPort		  1
+	  DstBlock		  "Post processing"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Post processing"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Z1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "buffer_m/d/2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 25]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "buffer_m/d/3"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pre processing1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "buffer_m/d/3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pre processing"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "buffer_m/d/2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Digital Filter"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [130, 34, 190, 96]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Digital Filter"
+      MaskDescription	      "This block captures the data window of a sample"
+"d signal and filters the signal. The predefined filters include Fourier and W"
+"alsh functions. The free expression filters may also be used."
+      MaskHelp		      "web(['file:///' which('df.html')]);"
+      MaskPromptString	      "Filter Type|Pass Type|IIR Filter Order|Sampling"
+" Frequency (Hz)|Cut-off Frequency (Hz)|Data Window for FIR filters|Output dat"
+"a window|Fundamental Frequency (Hz)|Numerator of the free expression filter|D"
+"enominator of the free expression filter"
+      MaskStyleString	      "popup(Fourier_Sine|Fourier_Cosine|Walsh1|Walsh2"
+"|Walsh3|Walsh4|Butterworth|Bessel|Chebyshev|Free expression),popup(lowpass|hi"
+"ghpass|bandpass|bandstop),popup(1|2|3),edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on"
+      MaskVariables	      "FilterType=@1;PassType=@2;IIROrder=@3;fs=@4;Cut"
+"Fre=@5;DataWindow=@6;winsize=@7;frequency0=@8;FreeZformNum=@9;FreeZformDen=@1"
+"0;"
+      MaskInitialization      "df1"
+      MaskDisplay	      "disp(DIFI);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      normalized
+      MaskValueString	      "Chebyshev|lowpass|2|32*60|[300]|32|1|60|[0  1 ]"
+"|[ 1 ]"
+      System {
+	Name			"Digital Filter"
+	Location		[276, 230, 634, 498]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [25, 113, 55, 137]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  DiscreteFilter
+	  Name			  " FIR and IIR Filters "
+	  Position		  [90, 95, 155, 155]
+	  Numerator		  "Num"
+	  Denominator		  "Den"
+	  SampleTime		  "1/fs"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [190, 110, 250, 140]
+	  FunctionName		  "df2"
+	  Parameters		  "winsize,fs"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [295, 118, 325, 132]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  " FIR and IIR Filters "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " FIR and IIR Filters "
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OC"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [345, 226, 410, 284]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Orthogonal Components"
+      MaskDescription	      "The block captures the data window of a sampled"
+" signal and computes the orthogonal components of the signal, i.e. amplitude "
+"and angle. The pre-defined filters include Fourier and Walsh functions. The f"
+"ree expression filters may also be used. Note: The type of data window affect"
+"s only the Fourier filter."
+      MaskHelp		      "This block take the date as its input window of"
+" the sampled signal, and convert it into a single orthogonal output. The outp"
+"ut values are direct and quadrature orthogonal components of signal at the pr"
+"esent sampling instant.\nThe options of the block include type and data windo"
+"w length of pre-defined filters and user-defined filters."
+      MaskPromptString	      "Type of filter:|Direct filter|Quadrature filter"
+"|Type of data window|Number of samples per cycle:"
+      MaskStyleString	      "popup(Fourier|Walsh|User Defined),edit,edit,pop"
+"up(half|full),edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskVariables	      "tfilt=@1;rfilt=@2;ifilt=@3;tlen=@4;N1=@5;"
+      MaskInitialization      "oc2;"
+      MaskDisplay	      "disp(DIFI);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "User Defined|[ ]|[ ]|full|40"
+      System {
+	Name			"OC"
+	Location		[193, 285, 534, 427]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "x"
+	  Position		  [25, 50, 45, 70]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "OC filter"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [115, 41, 170, 79]
+	  FunctionName		  "oc1"
+	  Parameters		  "tfilt, rfilt, ifilt, tlen, N1"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dq"
+	  Position		  [265, 50, 285, 70]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "OC filter"
+	  SrcPort		  1
+	  DstBlock		  "dq"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "x"
+	  SrcPort		  1
+	  DstBlock		  "OC filter"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [254, 105]
+	  Text			  "v_ort is \na complex number"
+	}
+	Annotation {
+	  Position		  [54, 108]
+	  Text			  "v(t) is a vector\nwith width N1"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Phase Selector"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [440, 161, 515, 259]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "PS"
+      MaskDescription	      "The inputs of the block are three phase signals"
+" and the outputs are the symmetrical components. The inputs can be instantane"
+"ous (3 inputs) or orthogonal components i.e. magnitudes and angles of the sig"
+"nals (6 inputs). The outputs reproduce the type of inputs."
+      MaskHelp		      "file:///C:/zq/ps.htm"
+      MaskPromptString	      "Threshold for Current|Threshold for Voltage|Thr"
+"eshold for Impedance|Threshold for zero-sequence current|Method"
+      MaskStyleString	      "edit,edit,edit,edit,popup(Current|Voltage|Imped"
+"ance|Current and Voltage|Current or Voltage|Current and Impedance|Current or "
+"Impedance|Voltage and Impedance|Voltage or Impedance|Current and Voltage and "
+"Impedance|Current or Voltage or Impedance)"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskVariables	      "THI=@1;THV=@2;THZ=@3;THG=@4;METHOD=@5;"
+      MaskInitialization      "ps1"
+      MaskDisplay	      "disp(icon)\n\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      normalized
+      MaskValueString	      "3|3|3|0.5|Current and Voltage and Impedance"
+      System {
+	Name			"Phase Selector"
+	Location		[301, 83, 685, 345]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "Vabc"
+	  Position		  [35, 48, 65, 62]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Iabc"
+	  Position		  [35, 138, 65, 152]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [100, 9, 180, 191]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [215, 85, 275, 115]
+	  FunctionName		  "ps2"
+	  Parameters		  "THI, THV, THZ, THG,METHOD"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [310, 93, 340, 107]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Vabc"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Iabc"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Symmetrical\nComponents"
+      Ports		      [3, 3, 0, 0, 0]
+      Position		      [445, 37, 505, 93]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Symmetrical Components"
+      MaskDescription	      "The inputs of the block are three phase signals"
+" and the outputs are the symmetrical components. The inputs can be instantane"
+"ous (3 inputs) or orthogonal components i.e. magnitudes and angles of the sig"
+"nals (6 inputs). The outputs reproduce the type of inputs."
+      MaskHelp		      "web(['file:///' which('sc.html')]);"
+      MaskPromptString	      "Orthogonal or Instantaneous|Signal Fundamental "
+"Frequency|Sampling Frequency (Hz)"
+      MaskStyleString	      "popup(Orthogonal|Instantaneous),edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskVariables	      "ortho_instant=@1;powerfre=@2;samplefre=@3;"
+      MaskInitialization      "sc2;"
+      MaskDisplay	      "disp(DIFI);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      normalized
+      MaskValueString	      "Orthogonal|60|1200"
+      System {
+	Name			"Symmetrical\nComponents"
+	Location		[451, 377, 853, 554]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "A"
+	  Position		  [25, 43, 55, 57]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "B"
+	  Position		  [25, 73, 55, 87]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "C"
+	  Position		  [25, 103, 55, 117]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 3, 0, 0, 0]
+	  Position		  [270, 28, 315, 132]
+	  Outputs		  "3"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [90, 31, 130, 129]
+	  Inputs		  "3"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [160, 65, 220, 95]
+	  FunctionName		  "sc1"
+	  Parameters		  "ortho_instant,powerfre,samplefre"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "0"
+	  Position		  [340, 38, 370, 52]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "1"
+	  Position		  [340, 73, 370, 87]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "2"
+	  Position		  [340, 108, 370, 122]
+	  Port			  "3"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "B"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "A"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Triggering Element"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [250, 230, 305, 280]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "TR"
+      MaskDescription	      "This block acts as a fault detector. The implem"
+"ented methods include sample by sample checking, cycle by cycle checking, ins"
+"tantaneous value and amplitude as the triggering parameter. The options inclu"
+"de also the limits for the set and re-set counters."
+      MaskHelp		      "file:\\\\\\c:\\zq\\ps.htm"
+      MaskPromptString	      "Method|Threshold|Activating counter|Deactivatin"
+"g counter|Sampling frecuency|Window size|Start time"
+      MaskStyleString	      "popup(Value|Sample to sample|Cycle to cycle),ed"
+"it,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskVariables	      "METHOD=@1;TH=@2;p=@3;q=@4;SF=@5;SN=@6;ti=@7;"
+      MaskDisplay	      "disp('TR')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "Sample to sample|.5|1|4|60*80|80|0.02"
+      System {
+	Name			"Triggering Element"
+	Location		[405, 209, 655, 393]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [25, 88, 55, 102]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [105, 55, 150, 135]
+	  FunctionName		  "tr1"
+	  Parameters		  "TH,p,q,SF,SN,METHOD,ti"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [195, 88, 225, 102]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "UC"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [345, 140, 405, 200]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Universal Comparator"
+      MaskDescription	      "This block is fed by two signals and does compa"
+"risons of three types: signal-to-signal, signal-to-threshold and signal-to-ti"
+"me. The options include the sign of the comparison, pick-up to re-set ratio, "
+"and the way of emulating the steady-state current characteristic."
+      MaskHelp		      "web(['file:///' which('uc.html')]);\n\n"
+      MaskPromptString	      "Type of comparison|Sign|Pick-up value:|Ratio of"
+" reset to pick-up:|Type of Time dependency|I-t emulation method|Time paramete"
+"r (seconds):|Sampling frecuency (Hz):"
+      MaskStyleString	      "popup(Signal-Threshold|Signal-Signal|Signal-Tim"
+"e),popup(>|<),edit,edit,popup(Time defined|Standard Inverse|Very Inverse|Extr"
+"a Inverse|RI Inverse|Long Time Inverse),popup(Present value|integration),edit"
+",edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskVariables	      "type=@1;sign=@2;Ipickup=@3;k1=@4;type1=@5;type3"
+"=@6;k=@7;fs=@8;"
+      MaskInitialization      "uc0;"
+      MaskDisplay	      "disp(icon);\nplot(current,time);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      port
+      MaskIconUnits	      autoscale
+      MaskValueString	      "Signal-Time|<|3|1|Time defined|integration|10|1"
+"*60"
+      System {
+	Name			"UC"
+	Location		[45, 239, 694, 788]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "S1"
+	  Position		  [150, 100, 185, 120]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "S2"
+	  Position		  [145, 145, 180, 165]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [230, 117, 265, 153]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [285, 120, 345, 150]
+	  FunctionName		  "uc1"
+	  Parameters		  "k,k1,aux,Ipickup,fs"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "C"
+	  Position		  [380, 125, 400, 145]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "S2"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "S1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 15]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "C"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ZC  \n"
+      Ports		      [1, 5, 0, 0, 0]
+      Position		      [340, 35, 410, 95]
+      BackgroundColor	      yellow
+      ShowPortLabels	      on
+      MaskType		      "Zone Comparator"
+      MaskDescription	      "This block performs the zone comparison. Its in"
+"puts are the resistance and reactance signals. Four forward and one backward "
+"zones are implemented. The output that corresponds to the zone where the impe"
+"dance is located is set to one while the rest of the outputs are zero Either "
+"the mho or free expression characteristics may be set. For the mho characteri"
+"stic, the zones are defined by specifying the center of each circle (all the "
+"circles are tangent to the origin). For the free expression, arrays with cons"
+"ecutive vertices specify the polygons for each zone."
+      MaskHelp		      "web(['file:///' which('zc.html')]);\n\n"
+      MaskPromptString	      "shape|Zone 1|Zone 2|Zone 3|Zone 4|Reverse Zone|"
+"Sampling frecuency (Hz):"
+      MaskStyleString	      "popup(Mho characteristic|Free expression),edit,"
+"edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskVariables	      "type=@1;z1=@2;z2=@3;z3=@4;z4=@5;zr=@6;fs=@7;"
+      MaskInitialization      "zc1;\n"
+      MaskDisplay	      "plot(x1(:,1),x1(:,2));\nplot(x2(:,1),x2(:,2));"
+"\nplot(x3(:,1),x3(:,2));\nplot(x4(:,1),x4(:,2));\nplot(xr(:,1),xr(:,2));\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "Free expression|[0 0 ;1 0; 1 1; 0.5 1]|[0 0; 2 "
+"0; 2 2; 1 2]|[0 0; 3 0; 4 3 ;1 3]|[0 0; 4 0; 5 4; 1 5]|[0 0; -1 0; -1 -1; 0 -"
+"1]|4*60"
+      System {
+	Name			"ZC  \n"
+	Location		[263, 61, 912, 610]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "Z"
+	  Position		  [150, 125, 185, 145]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 5, 0, 0, 0]
+	  Position		  [370, 107, 415, 153]
+	  Outputs		  "5"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [285, 120, 345, 150]
+	  FunctionName		  "zc2"
+	  Parameters		  "z1,z2,z3,z4,zr,type,fs,n,minx,flagc,m,b"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "1"
+	  Position		  [480, 30, 500, 50]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "2"
+	  Position		  [480, 75, 500, 95]
+	  Port			  "2"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "3"
+	  Position		  [480, 120, 500, 140]
+	  Port			  "3"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "4"
+	  Position		  [480, 160, 500, 180]
+	  Port			  "4"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "R"
+	  Position		  [480, 210, 500, 230]
+	  Port			  "5"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -70]
+	  DstBlock		  "1"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [2, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [35, 0; 0, -35]
+	  DstBlock		  "2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [35, 0; 0, 30]
+	  DstBlock		  "4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Z"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  Points		  [20, 0; 0, 70]
+	  DstBlock		  "R"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
