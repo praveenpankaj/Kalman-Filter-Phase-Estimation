@@ -1,6 +1,10 @@
-# Amplitude, Phase and Frequency Estimation using Kalman Filter
+# Amplitude, Phase and Frequency Estimation of a Signal using Kalman Filter
+
+![image](https://github.com/user-attachments/assets/819580f5-0549-46b8-b1f5-b2a6d7bab41a)
 
 This was a graduate level project developed while I was a student at Texas A&M University in 2004. The original code was written for Simulink 5.0. I tested it on October 19, 2022 on the online version of Simulink, and this was working very well. The current desktop release and versions for Matlab and Simulink are R2020b	and 10.2, respectively. I am assuming that the online releases are in sync with the desktop ones, and I don't see any reason why it should not work. 
+
+![image](https://github.com/user-attachments/assets/54d53534-4144-4156-b84a-01eb37e68883)
 
 Kalman Filters are a very ingenious work and I would like everyone to appreciate the beauty in it's workings. In order to recreate the joy of discovering Kalman Filters, I wanted to open source these codes for the community.
 
